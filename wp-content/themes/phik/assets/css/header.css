@@ -1,0 +1,13 @@
+header {
+  display: flex;
+}
+.custom-logo {
+  width: 800px;
+  height: 120px;
+}
+#menu-header {
+  display: flex;
+}
+li {
+  padding-left: 50px;
+}
