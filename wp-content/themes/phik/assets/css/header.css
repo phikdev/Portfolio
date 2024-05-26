@@ -1,5 +1,6 @@
 header {
   display: flex;
+  background-color: black;
 }
 .custom-logo {
   width: 800px;
@@ -7,7 +8,11 @@ header {
 }
 #menu-header {
   display: flex;
+  margin: auto;
 }
 li {
   padding-left: 50px;
+}
+.premier {
+  content: url(../images/html.png);
 }
