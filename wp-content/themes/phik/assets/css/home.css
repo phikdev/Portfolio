@@ -1,0 +1,252 @@
+#cafe {
+  position: relative;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+}
+
+#imgDev {
+  width: 100%;
+  height: auto;
+}
+
+.title1,
+.title2 {
+  position: absolute;
+}
+
+.title1 {
+  top: 150px;
+  left: 523px;
+  font-size: 4.4vw;
+  text-transform: uppercase;
+  color: #808080;
+  text-shadow: 2px 2px 0 #000, 2px 2px 2px #000, -2px -2px 0 #5a5a5a,
+    -2px -2px 2px #5a5a5a;
+  background: rgba(255, 68, 0, 0.315);
+  border-radius: 30px;
+}
+
+.title2 {
+  top: 400px;
+  left: 670px;
+  font-size: 4.4vw;
+  text-transform: uppercase;
+  color: #808080;
+  text-shadow: 2px 2px 0 #000, 2px 2px 2px #000, -2px -2px 0 #5a5a5a,
+    -2px -2px 2px #5a5a5a;
+  background: rgba(255, 68, 0, 0.315);
+  border-radius: 30px;
+}
+
+#ligne {
+  border-top: 1px black solid;
+  width: 80%;
+  margin: auto;
+}
+#title {
+  padding-bottom: 150px;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 700px;
+  width: 80%;
+  margin: auto;
+}
+#leftHero {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#rightHero {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#presentation {
+  background-color: rgba(255, 68, 0, 0.699);
+  color: black;
+  border-radius: 1% 99% 0% 100% / 12% 84% 16% 88%;
+  text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc;
+  font-size: 3em;
+  font-weight: bold;
+  width: 70%;
+  text-align: center;
+}
+#imgDev {
+  padding-top: 25px;
+  width: 80%;
+  height: 750px;
+  border-radius: 2%;
+  object-fit: cover;
+}
+.image-container {
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#projet {
+  font-size: 2.5em;
+  display: flex;
+  justify-content: center;
+  color: #131313;
+  letter-spacing: 0.15em;
+  text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc,
+    1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee,
+    4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc,
+    4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee,
+    7px 6px 1px #cccccc;
+  color: #000000;
+}
+#projet h2 {
+  font-size: 2.2em;
+  text-transform: uppercase;
+  background: rgba(255, 68, 0, 0.699);
+  border-radius: 1% 99% 0% 100% / 12% 84% 16% 88%;
+}
+select#category-filter {
+  width: 300px;
+  height: 50px;
+  margin: auto;
+  margin-bottom: 100px;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+#category-filter {
+  width: 500px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+
+.galerie img {
+  height: 400px;
+  width: 280px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+#posts-container {
+  width: 35%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.photo-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.photo-hover-container:hover .photo-hover-overlay {
+  opacity: 1;
+  background: #000000cb;
+}
+
+.photo-link img {
+  height: 31px;
+  width: 46px;
+  transition: transform 0.3s;
+}
+
+#photo-galerie .photo-link img {
+  height: 31px;
+  width: 46px;
+  transition: transform 0.3s;
+}
+.photo-hover-container:hover .photo-link img {
+  transform: scale(1.2); /* effet de zoom léger au survol */
+}
+.photo-hover-container {
+  position: relative;
+  /* autres styles pour le conteneur de la photo */
+}
+
+.photo-fullscreen-link {
+  display: none; /* Masquer par défaut */
+  position: absolute;
+  top: 10px; /* Ajustez la valeur pour la position exacte */
+  right: 10px; /* Ajustez la valeur pour la position exacte */
+  z-index: 10; /* S'assurer que l'icône est au-dessus de l'image */
+}
+
+.photo-hover-container:hover .photo-fullscreen-link {
+  display: block; /* Afficher l'icône au survol */
+}
+
+.icon-fullscreen {
+  display: block;
+}
+img.icon-fullscreen {
+  width: 30px;
+  height: 30px;
+}
+#photo-galerie img.icon-fullscreen {
+  width: 30px;
+  height: 30px;
+}
+
+.photo-hover-container:hover .photo-categorie {
+  display: block; /* Afficher le titre au survol de .photo-hover-container */
+}
+.photo-categorie {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+
+  color: white;
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 90%; /* Largeur maximale du titre pour éviter de déborder du conteneur de la photo */
+  white-space: nowrap; /* Empêche le texte de passer à la ligne */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ajoute des points de suspension si le texte déborde */
+  z-index: 5;
+}
+#bouton {
+  width: 150px;
+  margin: auto;
+}
+button#btnL {
+  cursor: pointer;
+  background-color: rgba(255, 68, 0, 0.699);
+  border: rgba(255, 68, 0, 0.699) solid 1px;
+  color: black;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  width: 150px;
+  height: 50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+button#btnL:hover {
+  background-color: orangered;
+}

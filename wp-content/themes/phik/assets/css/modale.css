@@ -23,9 +23,9 @@
   overflow: hidden;
 }
 #contact {
-  content: url(../images/contact1.png);
-  width: 500px;
-  height: 200px;
+  content: url(../images/contact.png);
+  width: 600px;
+  height: 220px;
   margin: auto;
 }
 form {
@@ -48,7 +48,9 @@ textarea {
   margin-top: 8px;
 }
 input.wpcf7-form-control.wpcf7-submit.has-spinner {
-  background-color: #d72323;
+  background-color: black;
+  color: white;
+  cursor: pointer;
   font-weight: 800;
   width: 315px;
   height: 90px;

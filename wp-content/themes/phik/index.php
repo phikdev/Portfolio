@@ -1,61 +1,82 @@
 <?php get_header();?>
-<section>
-    <h1>
-        Développeur Web / Développeur Wordpress
-    </h1>
+
+
+
+     
+        <section id="cafe">
+            <div  class="image-container">
+        <img id="imgDev" src="<?php echo get_stylesheet_directory_uri().'/assets/images/design.jpg' ?>" alt="image de bureau">
+        <h1 class="title1">Développeur Web</h1>
+        <h1 class="title2"> Wordpress</h1>
+        </div>
+        </section>
+        <section id="hero">
+    <div id="leftHero">
+    <p id ="presentation">Bonjour, je suis Kévin Philippon, développeur front-end passionné situé en France.</p>
+    </div>
+        <div id="rightHero">
+           
+        <?php get_template_part('templates_part/swiper');?>
+        </div>
 </section>
-<section>
-<style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
 
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
+          <section id="projet">
+            <h2>
+              Mes projets
+            </h2>
 
-    swiper-container {
-      width: 100%;
-      height: 100%;
-    }
+          </section>
+          
+          
+         
+          <section class="galerie">
+    <?php
+    $categories = get_terms(
+        array(
+            'taxonomy' => 'categorie', // assurez-vous que la taxonomie existe
+            'orderby' => 'name',
+        ) 
+    );
 
-    swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
+    if ( !is_wp_error( $categories ) && !empty( $categories ) ) :
+    ?>
+        <select id="category-filter">
+            <option value="">Compétence</option>
+            <?php
+            foreach ( $categories as $category ) :
+                ?><option value="<?php echo esc_attr( $category->term_id ); ?>"><?php echo esc_html( $category->name ); ?></option><?php
+            endforeach;
+            ?>
+        </select>
+    <?php
+    endif;
+    ?>
 
 
-  <swiper-container class="mySwiper" pagination="true">
-  <swiper-slide><img id="language" src="<?php echo get_stylesheet_directory_uri().'/assets/images/html.png' ?>" alt="photo-header"></swiper-slide>
-    <swiper-slide><img id="language" src="<?php echo get_stylesheet_directory_uri().'/assets/images/css3.png' ?>" alt="photo-header"></swiper-slide>
-    <swiper-slide><img id="language" src="<?php echo get_stylesheet_directory_uri().'/assets/images/sass (2).png' ?>" alt="photo-header"></swiper-slide>
-    <swiper-slide><img id="language" src="<?php echo get_stylesheet_directory_uri().'/assets/images/js.png' ?>" alt="photo-header"></swiper-slide>
-    <swiper-slide><img id="language" src="<?php echo get_stylesheet_directory_uri().'/assets/images/php.png' ?>" alt="photo-header"></swiper-slide>
-    <swiper-slide><img id="language" src="<?php echo get_stylesheet_directory_uri().'/assets/images/wp.png' ?>" alt="photo-header"></swiper-slide>
-  </swiper-container>
+    <div id="posts-container">
+        <?php 
+        $publications = new WP_Query([
+            'post_type' => 'projet',
+            'posts_per_page' => 4,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'paged' => 1,
+        ]);
+        ?>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-
-
+        <?php if($publications->have_posts()): ?>
+            <?php 
+            while ($publications->have_posts()): $publications->the_post();
+            get_template_part('templates_part/content');
+            endwhile;
+            ?>
+        <?php endif; ?>
+        <?php wp_reset_postdata(); ?>
+    </div>
 </section>
+<div id="bouton">
+<button id="btnL" type="button">Plus de projets</button>
+</div>
+
 
 <?php get_footer();?>
